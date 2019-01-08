@@ -1,10 +1,8 @@
 # simple-server
 
-A simple server based on Express
+#### A simple server based on Express
 
 ## Installation
-
----
 
 Using npm:
 

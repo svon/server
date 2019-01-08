@@ -8,10 +8,9 @@ Using npm:
 
 	npm i --save https://github.com/svon/server
 
-
 In Node.js:
 
-	import Server from '@fengqiaogang/server'
+	import Server from '@svon/server'
 
 	const { app } = Server()
 

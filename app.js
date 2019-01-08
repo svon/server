@@ -2,24 +2,24 @@
  * express server
  */
 
-const cookieParser require('cookie-parser')
-const createError require('http-errors')
-const minify require('express-minify')
-const express require('express')
-const path require('path')
-const http require('http')
+const cookieParser = require('cookie-parser')
+const createError = require('http-errors')
+const minify = require('express-minify')
+const express = require('express')
+const path = require('path')
+const http = require('http')
 // 构造 debug 对象
 const debug = require('debug')('center:server')
 // 程序跟目录
 const rootPath = process.cwd()
 
+// 默认配置
 const defaultOption = {
 	port: 3000, // 端口
 	host: '0.0.0.0', // host 地址
 	views: 'views', // 视图文件地址
 	engine: 'html' // 视图文件类型
 }
-
 
 function SimpleServer (option = {}) {
 	const app = express()

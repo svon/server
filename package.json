@@ -1,5 +1,5 @@
 {
-  "name": "@fengqiaogang/server",
+  "name": "@svon/server",
   "version": "1.0.0",
   "description": "A simple server based on Express",
   "main": "bin/www.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/svonme/simple-server.git"
+    "url": "git+ssh://git@github.com:svon/server.git"
   },
   "keywords": [
     "express",
@@ -17,9 +17,9 @@
   "author": "svon <svon.me@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/svonme/simple-server/issues"
+    "url": "https://github.com/svon/server/issues"
   },
-  "homepage": "https://github.com/svonme/simple-server#readme",
+  "homepage": "https://github.com/svon/server#readme",
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-helpers": "^6.24.1",

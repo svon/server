@@ -6,7 +6,7 @@
 
 Using npm:
 
-	npm i --save https://github.com/svonme/simple-server
+	npm i --save https://github.com/svon/server
 
 
 In Node.js:

@@ -8,8 +8,9 @@ const express = require('express')
 const path = require('path')
 const http = require('http')
 const morgan = require('morgan')
+const bodyParser = require('body-parser')
 // 构造 debug 对象
-const debug = require('debug')('center:server')
+const debug = require('debug')('osec:server')
 // 程序跟目录
 // const rootPath = process.cwd()
 
@@ -42,6 +43,12 @@ function SimpleServer (option = {}) {
 	app.use(express.json({
 		limit: '2mb'
 	}))
+
+    // post application/x-www-form-urlencoded 解析
+    app.use(bodyParser.urlencoded({ extended: false }))
+    // parse application/json
+    app.use(bodyParser.json())
+
 	app.use(express.urlencoded({ extended: false }))
 	// 配置 cookie 解析
 	app.use(cookieParser())

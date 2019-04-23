@@ -3,21 +3,21 @@
  */
 
 const cookieParser = require('cookie-parser')
-const createError = require('http-errors')
 const minify = require('express-minify')
 const express = require('express')
 const path = require('path')
 const http = require('http')
+const morgan = require('morgan')
 // 构造 debug 对象
 const debug = require('debug')('center:server')
 // 程序跟目录
-const rootPath = process.cwd()
+// const rootPath = process.cwd()
 
 // 默认配置
 const defaultOption = {
 	port: 3000, // 端口
 	host: '0.0.0.0', // host 地址
-	views: 'views', // 视图文件地址
+	// views: 'views', // 视图文件地址
 	engine: 'html' // 视图文件类型
 }
 
@@ -25,14 +25,17 @@ function SimpleServer (option = {}) {
 	const app = express()
 
 	const opt = Object.assign({}, defaultOption, option)
-	
-	app.set('port', opt.port) // 设置端口
-	
 
-	// 视图文件地址
-	app.set('views', path.join(rootPath, opt.views))
+	app.set('port', opt.port) // 设置端口
+
+    if (opt.views) {
+        // 视图文件地址
+        app.set('views', opt.views)
+    }
 	// 视图模版类型
 	app.set('view engine', opt.engine)
+    // 日志
+    app.use(morgan('dev'))
 	// 压缩输出
 	app.use(minify())
 	// 修改 express post 内容大小
